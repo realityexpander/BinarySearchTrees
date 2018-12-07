@@ -54,10 +54,10 @@ function depthFirstSearch(root, search) {
         return node
       }
       if(node.right) {
-        stack.push(tree[node.right]) 
+        stack.push(root[node.right]) 
       }
       if(node.left) {
-        stack.push(tree[node.left])
+        stack.push(root[node.left])
       }
     }
   }
