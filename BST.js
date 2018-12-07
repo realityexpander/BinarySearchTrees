@@ -9,18 +9,19 @@
 // q1:
 
 function searchBT(arr, search) {
-
+  if(arr.length ===0)
+      return null;
   if( arr[item] === search )
     return item;
-
   if( arr[item] > search ) {
     return searchBT(arr.splice(item, arr.length-1));
+  }
+  if(arr[item] < search ) {
+    return searchBT(arr.splice(0, item-1)); 
   }
 }
 
 // q2:
-
-q2: 
 
 function breadthFirstSearch(root, search) {
   let queue = []
