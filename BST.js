@@ -33,12 +33,32 @@ function breadthFirstSearch(root, search) {
            return node;
         }
         if(node.left) {
-           queue.push(tree[node.left])
+           queue.push(root[node.left])
         }
         if(node.right) {
-           queue.push(tree[node.right])
+           queue.push(root[node.right])
         }
      }
   }
   return null 
+}
+
+function depthFirstSearch(root, search) {
+  let stack = []
+  stack.push(root[0]);
+  while( stack.length !== 0 ) {
+    for(let i=0; i<stack.length; i++) {
+      let node = stack.pop();
+      if(node.value === search) {
+        return node
+      }
+      if(node.right) {
+        stack.push(tree[node.right]) 
+      }
+      if(node.left) {
+        stack.push(tree[node.left])
+      }
+    }
+  }
+  return null;
 }
